@@ -1,1 +1,1 @@
-web: gunicorn onePush.wsgi
+web: gunicorn LearningHub.wsgi
