@@ -37,6 +37,8 @@ function getListItem(){
 				
 				initAutoComplete();
 
+				setUpVotes();
+
 				createList(dataSource);
 
 				createPagination();
@@ -44,8 +46,6 @@ function getListItem(){
 				$(".course-paginate").first().click();
 
 				$("#no-of-results").text("Result: "+ dataSource.length +" courses found.");
-
-				setUpVotes();
 				
   			},
   			error: function(){
@@ -72,10 +72,12 @@ function createList(resultList){
 			var hours = (value.hours === null) ? "" : value.hours;
 			var ups = "";
 			var downs = "";
-			if(id !== ""){
+
+			if(id !== "" && localStorage.getItem(id) != null){
 				ups = JSON.parse(localStorage.getItem(id)).upvote;
 				downs = JSON.parse(localStorage.getItem(id)).downvote;
 			}
+
 			html += '<li class="course-li"><a class="course-paginate" onclick="showCourse('+key+')" id="'+id+'" data-rank="'+counter+'" data-user="'+learners+'" data-hour="'+hours+'" data-up="'+ups+'" data-down="'+downs+'">'+ name +'</a></li>';
 			counter++;
 		});
@@ -124,7 +126,7 @@ function showCourse(_key){
 	var sing_up = (dataSource[_key].sing_up === null) ? "" : dataSource[_key].sing_up;
 	var id = (dataSource[_key].id === null) ? "" : dataSource[_key].id;
 
-	if(id !== ""){
+	if(id !== "" && localStorage.getItem(id)!= null){
 		var ups = JSON.parse(localStorage.getItem(id)).upvote;
 		var downs = JSON.parse(localStorage.getItem(id)).downvote;
 		$("#badge_up").text(ups);
