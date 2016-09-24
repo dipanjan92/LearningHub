@@ -21,6 +21,11 @@ $(document).ready(function(){
   	});
 
 	getListItem();
+
+	$(".panel-hlpr .btn").on('click', function(){
+		$("button.selected-button").removeClass('selected-button');
+		$(this).addClass("selected-button");
+	});
 });
 
 // //Get site information from the API
@@ -126,6 +131,9 @@ function showCourse(_key){
 	var sing_up = (dataSource[_key].sing_up === null) ? "" : dataSource[_key].sing_up;
 	var id = (dataSource[_key].id === null) ? "" : dataSource[_key].id;
 
+	$("a.course-paginate").removeClass("selected-button");
+	$("#"+id).addClass("selected-button");
+
 	if(id !== "" && localStorage.getItem(id)!= null){
 		var ups = JSON.parse(localStorage.getItem(id)).upvote;
 		var downs = JSON.parse(localStorage.getItem(id)).downvote;
@@ -179,6 +187,7 @@ function sortByLearners(){
 	});
 
 	createPagination();
+	$(".course-paginate").first().click();
 
 
 	function sort_learners(a, b){
@@ -199,6 +208,7 @@ function sortByDuration(){
 	});
 
 	createPagination();
+	$(".course-paginate").first().click();
 
 
 	function sort_hours(a, b){
@@ -220,6 +230,7 @@ function sortByUpVote(){
 	});
 
 	createPagination();
+	$(".course-paginate").first().click();
 
 
 	function sort_ups(a, b){
@@ -241,6 +252,7 @@ function sortByDownVote(){
 	});
 
 	createPagination();
+	$(".course-paginate").first().click();
 
 
 	function sort_downs(a, b){
