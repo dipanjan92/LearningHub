@@ -4,7 +4,6 @@ body{
 
 .banner{
 	background-color: white;
-	border-bottom: 2px solid #16a085;
 }
 
 .banner-logo, .banner-logo:focus, .banner-logo:active, .banner-logo:hover, .banner-logo:visited{
@@ -69,7 +68,7 @@ body{
 }
 
 .list-bar, .list-details{
-	color: #16a085;
+	color: #1E293D;
 	text-decoration: none;
 	cursor: text;
 	overflow: hidden;
@@ -88,7 +87,7 @@ body{
 }
 
 .course-result{
-	margin: 2px;
+	margin: 1px;
 }
 
 .media-object {
@@ -105,9 +104,9 @@ body{
 .result-list{
 	max-height: 65vh;
 	overflow-y: auto;
-	margin: 5px;
-	border: 2px solid #16a085;
-	background-color: #16a085;
+	margin: 1px;
+	border: 2px solid #1E293D;
+	background-color: #1E293D;
 }
 
 #badge_up, #badge_down {
@@ -121,7 +120,7 @@ body{
 }
 
 #result_heading {
-	border: 2px solid #16a085;
+	border: 2px solid #F33E87;
 	width: 100%;
 	background-color: white;
 	color: #F33E87;
@@ -130,7 +129,7 @@ body{
 }
 
 .media-object{
-	border: 2px solid #16a085!important;
+	border: 2px solid #F33E87!important;
 	background-color: white;
 }
 
@@ -149,7 +148,7 @@ body{
 
 .pagination a, .list-group-item, .btn {
 	color: #F33E87!important;
-	border: 2px solid #16a085!important;
+	border: 2px solid #F33E87!important;
 	border-collapse: collapse;
 }
 
@@ -157,12 +156,12 @@ body{
 	background-color: white;
 }
 
-.btn:hover, .btn:active, btn:visited, btn:focus, .div-row-2, .div-row-3 {
+.btn:hover, .btn:active, btn:visited, btn:focus{
 	background-color: #1E293D!important;
 }
 
 .div-row-2 {
-	border: 2px solid #16a085;
+	border: 2px solid #F33E87;
 	margin: 5px 15px;
 	background-color: white!important;
 }
@@ -170,14 +169,19 @@ body{
 .div-row-3{
 	padding: 5px;
 	margin: 0px 15px;
+	background-color: #1E293D;
 }
 
+ .media-body, .list-group-item, .panel-body {
+	background-color: #1E293D!important;	
+ }
+
 .panel-heading, .input-group-addon{
-	background-color: #1E293D!important;
+	background-color: white!important;
 	color: #F33E87!important;
 }
 
-.pagination #prev-list, .pagination #next-list, .media-body, .list-group-item {
+.pagination #prev-list, .pagination #next-list{
 	background-color: #1E293D!important;
 }
 
@@ -190,13 +194,13 @@ body{
 }
 
 .list-row-2{
-	border: 2px solid #16a085;
+	border: 2px solid #F33E87;
 	padding: 5px;
 	background-color: white;
 }
 
 .input-group, .panel{
-	border: 2px solid #16a085!important;
+	border: 2px solid #F33E87!important;
 	border-collapse: collapse;
 }
 
