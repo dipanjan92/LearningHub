@@ -1,0 +1,24 @@
+Instruction to setup the project
+--------------------------------
+
+1.Unzip the project.zip
+    
+2.Open command line
+    
+3.Move to path PATH_TO_UNZIPPED_FOLDER/LearningHub
+    
+4.Install Python3.5
+    
+5.Install pip
+    
+6.Install following packages using pip:
+        
+        - Django==1.10.1
+        - gunicorn==19.6.0
+        - whitenoise==3.2.1
+    
+7.From terminal run "gunicorn LearningHub.wsgi"
+    
+8.Site will be running on "http://localhost:8000"
+    
+9.Demo site is deployed in "https://dipanjanlearninghub.herokuapp.com/"

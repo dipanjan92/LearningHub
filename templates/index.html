@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Springboard | LearningHub</title>
+	{% load static %}
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script   src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"   integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="   crossorigin="anonymous"></script> 
+	<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://use.fontawesome.com/edaad0f95c.js"></script>	
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+	<script src="{% static "js/script.js" %}"></script>
+</head>
+<body class="container-fluid">
+
+	<div class="row banner">
+		<div class="col-sm-12">
+			<a href="#" title="TopGit" class="banner-logo h1">
+				<i class="fa fa-yelp banner-logo-icon"></i>
+				Springboard<span class="small banner-small-text">LearningHub - one stop hub for all the learning paths.</span>
+			</a>
+		</div>
+	</div>
+
+	<div class="row search-body">
+
+	<div class="col-sm-2 add-site">
+		<div class="row">
+			<div class="panel panel-default panel-hlpr">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title"><i class="fa fa-align-justify"></i>Sort by</h3>
+	  			</div>
+	  			<div class="panel-body text-center">
+	    			<div class="btn-group-vertical" role="group">
+ 						<button type="button" class="btn btn-default" onclick="sortByUpVote()">Vote (Up)</button>
+						<button type="button" class="btn btn-default" onclick="sortByDownVote()">Vote (Down)</button>
+ 						<button type="button" class="btn btn-default" onclick="sortByLearners()">Learners</button>
+						<button type="button" class="btn btn-default" onclick="sortByDuration()">Duration</button>
+  					</div>
+	  			</div>
+			</div>			
+		</div>
+	</div>
+
+	<div class="col-sm-10 search-results">
+		<div class="row search-bar">
+			<div class="col-sm-6 input-group">
+				<span class="input-group-addon"><i class="fa fa-search"></i></span>
+				<input type="search" class="form-control" name="lang_search" id="searchInput" placeholder="Search (by tag)" />
+				<i class="fa fa-times-circle clearSearch"></i>
+				<i class="fa fa-spinner fa-pulse fa-fw ajax-loader"></i>
+			</div>
+		</div>
+		<div class="row result-summary">
+			<label id="no-of-results"></label>
+		</div>
+		<div class="row result-list">
+			<ul class="list-group course-result">
+				<li class="list-group-item" id="li-1" data-id="1" style="">
+					<div class="media">
+						<div class="media-left">
+							<a href="#"><img class="media-object" id="course_image" src=""></a>
+						</div>
+						<div class="media-body">
+							<div class="list-row-1">
+								<label id="result_heading"></label>
+							</div>
+							<div class="list-row-2">
+								<i class="fa fa-tags"></i><label id="result_tag"></label>
+							</div>
+							<div class="list-row-3">
+								<div class="btn-group-vertical" role="group">
+ 									<button type="button" class="btn btn-default" onclick="upVote(this)"><i class="fa fa-caret-up"></i><span id="badge_up" class="badge"></span></button>
+									<button type="button" class="btn btn-default" onclick="downVote(this)"><i class="fa fa-caret-down"></i><span id="badge_down" class="badge"></span></button>
+  								</div>									
+								<ul class="list-group pull-right">
+									<li class="list-group-item">
+								  		<i class="fa fa-user"></i>
+								    	<span class="" id="learners"></span>
+								    	Learners
+								  	</li>
+								  	<li class="list-group-item">
+								  		<i class="fa fa-clock-o"></i>
+								    	<span class="" id="hours"></span>
+								    	Hours
+								  	</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<label id="course_desc" class="bg-success"></label>
+						</div>
+						<div class="col-sm-12">
+							<a href="#" id="view_curr" target="_blank" role="button" class="btn btn-primary pull-right"><i class="fa fa-link"></i>View Curriculam</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="col-sm-12 text-center">
+		<nav>
+		  <ul class="pagination">
+		    <li id="prev-list">
+		      <a onclick="getPrev(this)">
+		        <span>&laquo;</span>
+		      </a>
+		    </li>
+		    
+		    <li id="next-list">
+		      <a onclick="getNext(this)">
+		        <span>&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
+	</div>
+
+	</div>
+
+
+
+</body>
+</html>
